@@ -17,36 +17,98 @@
 }
 
 body{
-    background:#0f172a;
+    background:#050505;
     color:#f1f5f9;
+    line-height:1.6;
+     padding-top:120px;
 }
 
-header{
-    padding:20px 10%;
+/* ===== HEADER ===== */
+/* ========================= */
+/* 🔥 MODERN FLOATING NAVBAR */
+/* ========================= */
+
+.main-header{
+    position:fixed;
+    top:25px;
+    width:100%;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
+    justify-content:center;
+    z-index:1000;
 }
 
-header h1{
-    font-size:22px;
+.navbar{
+    display:flex;
+    gap:40px;
+    padding:8px 40px;
+    border-radius:50px;
+    background:rgba(255, 255, 255, 0.248);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 8px 30px rgba(0,0,0,0.4);
 }
 
-nav a{
-    color:#f1f5f9;
+.nav-link{
+    position:relative;
     text-decoration:none;
-    margin-left:20px;
-    font-weight:400;
+    color:#ffffff;
+    font-weight:500;
+    font-size:16px;
+    padding:5px 0;
+    transition:0.3s;
 }
 
+/* Hover effect */
+.nav-link:hover{
+    color:#38bdf8;
+}
+
+/* Animated underline */
+.nav-link::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:3px;
+    background:#ffffff;
+    border-radius:3px;
+    transition:0.3s ease;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+/* Active link */
+.nav-link.active::after{
+    width:100%;
+}
+
+@media (max-width:768px){
+
+    .navbar{
+        gap:20px;
+        padding:12px 25px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-link{
+        font-size:14px;
+    }
+
+}
+
+/* ===== HERO ===== */
 .hero{
-    height:90vh;
+    min-height:90vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 20px;
+    padding:40px 20px;
 }
 
 .hero img{
@@ -54,6 +116,7 @@ nav a{
     height:150px; 
     border-radius:50%; 
     margin-bottom:20px;
+    object-fit:cover;
     box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
@@ -63,7 +126,7 @@ nav a{
 }
 
 .hero span{
-    color:#38bdf8;
+    color:#556166;
 }
 
 .hero p{
@@ -87,6 +150,7 @@ nav a{
     transform:scale(1.05);
 }
 
+/* ===== SECTIONS ===== */
 section{
     padding:80px 10%;
 }
@@ -97,6 +161,7 @@ section{
     text-align:center;
 }
 
+/* ===== GRID ===== */
 .projects{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -105,8 +170,8 @@ section{
 
 .card{
     background:#1e293b;
-    padding:20px;
-    border-radius:10px;
+    padding:25px;
+    border-radius:12px;
     transition:0.3s;
     text-align:center;
 }
@@ -130,6 +195,7 @@ section{
     margin-bottom:15px;
 }
 
+/* ===== CONTACT BUTTONS ===== */
 .contact-btn{
     display:inline-flex;
     justify-content:center;
@@ -148,6 +214,7 @@ section{
     box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
+/* ===== FOOTER ===== */
 footer{
     background:#1e293b; 
     color:#f1f5f9; 
@@ -164,15 +231,7 @@ footer a:hover{
     color:#38bdf8;
 }
 
-@media screen and (max-width:600px){
-    .hero h2{
-        font-size:32px;
-    }
-    .projects{
-        grid-template-columns:1fr;
-    }
-}
-
+/* ===== SMALL BUTTON ===== */
 .btn-small {
     padding:6px 12px;
     font-size:12px;
@@ -189,22 +248,97 @@ footer a:hover{
     transform:scale(1.05);
 }
 
+/* ============================= */
+/* 📱 RESPONSIVE BREAKPOINTS */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 992px){
+    section{
+        padding:60px 6%;
+    }
+
+    .hero h2{
+        font-size:36px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+
+    header{
+        padding:15px 5%;
+        flex-direction:column;
+        gap:10px;
+    }
+
+    nav{
+        justify-content:center;
+    }
+
+    nav a{
+        margin:8px;
+    }
+
+    section{
+        padding:60px 5%;
+    }
+
+    .hero{
+        padding:60px 20px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .projects{
+        grid-template-columns:1fr;
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px){
+
+    .hero img{
+        width:120px;
+        height:120px;
+    }
+
+    .hero h2{
+        font-size:26px;
+    }
+
+    .section-title{
+        font-size:22px;
+    }
+
+    .contact-btn{
+        width:50px;
+        height:50px;
+        font-size:20px;
+    }
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Muhammad Zafar Shahrin</h1>
-    <nav>
-        <a href="#about">About Me</a>
-        <a href="#services">Services</a>
-        <a href="#projects">Previous Projects</a>
-        <a href="#contact">Contact</a>
+<header class="main-header">
+    <nav class="navbar">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
     </nav>
 </header>
-
-<section class="hero">
+<br>
+<section class="hero" id="hero">
     <img src="images/pic1.jpeg" alt="Muhammad Zafar Shahrin">
     <h2>Hi, I'm <span>Muhammad Zafar Shahrin</span></h2>
     <p>I build modern, fast and responsive websites and web systems that help businesses operate efficiently and grow online.</p>
