@@ -9,329 +9,359 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#050505;
-    color:#dcdcdc;
-    line-height:1.6;
-     padding-top:120px;
+background:#050505;
+color:#dcdcdc;
+line-height:1.6;
+padding-top:120px;
 }
 
-/* ===== HEADER ===== */
 /* ========================= */
-/* 🔥 MODERN FLOATING NAVBAR */
+/* NAVBAR */
 /* ========================= */
 
 .main-header{
-    position:fixed;
-    top:25px;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    z-index:1000;
+position:fixed;
+top:20px;
+width:100%;
+display:flex;
+justify-content:center;
+z-index:1000;
 }
 
 .navbar{
-    display:flex;
-    gap:40px;
-    padding:8px 40px;
-    border-radius:50px;
-    background:rgba(255, 255, 255, 0.248);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    box-shadow:0 8px 30px rgba(0,0,0,0.4);
+display:flex;
+gap:40px;
+padding:10px 40px;
+border-radius:50px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.15);
+box-shadow:0 8px 30px rgba(0,0,0,0.4);
 }
 
 .nav-link{
-    position:relative;
-    text-decoration:none;
-    color:#ffffff;
-    font-weight:500;
-    font-size:16px;
-    padding:5px 0;
-    transition:0.3s;
+position:relative;
+text-decoration:none;
+color:#ffffff;
+font-weight:500;
+font-size:16px;
+padding:5px 0;
+transition:0.3s;
 }
 
-/* Hover effect */
 .nav-link:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
-/* Animated underline */
 .nav-link::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-6px;
-    width:0%;
-    height:3px;
-    background:#ffffff;
-    border-radius:3px;
-    transition:0.3s ease;
+content:"";
+position:absolute;
+left:0;
+bottom:-6px;
+width:0%;
+height:3px;
+background:#ffffff;
+border-radius:3px;
+transition:0.3s ease;
 }
 
 .nav-link:hover::after{
-    width:100%;
+width:100%;
 }
 
-/* Active link */
 .nav-link.active::after{
-    width:100%;
+width:100%;
 }
 
-@media (max-width:768px){
+/* ========================= */
+/* HERO */
+/* ========================= */
 
-    .navbar{
-        gap:20px;
-        padding:12px 25px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    .nav-link{
-        font-size:14px;
-    }
-
-}
-
-/* ===== HERO ===== */
 .hero{
-    min-height:90vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px 20px;
+min-height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
 }
 
 .hero img{
-    width:150px; 
-    height:150px; 
-    border-radius:50%; 
-    margin-bottom:20px;
-    object-fit:cover;
-    box-shadow:0 5px 15px rgba(0,0,0,0.5);
+width:150px;
+height:150px;
+border-radius:50%;
+margin-bottom:20px;
+object-fit:cover;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
 .hero h2{
-    font-size:42px;
-    margin-bottom:15px;
-    color:#A9A9A9;
+font-size:42px;
+margin-bottom:15px;
+color:#A9A9A9;
 }
 
 .hero span{
-    color:#ffffff;
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700;
-    letter-spacing:1px;
-    
-
-
+color:#ffffff;
+font-family:'Space Grotesk', sans-serif;
+font-weight:700;
+letter-spacing:1px;
 }
 
 .hero p{
-    max-width:600px;
-    margin-bottom:25px;
-    color:#d3d3d3;
+max-width:600px;
+margin-bottom:25px;
+color:#d3d3d3;
+font-size:16px;
 }
 
 .btn{
-    padding:12px 25px;
-    background:#d3d3d3;
-    color:#0f172a;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:600;
-    transition:0.3s;
+padding:12px 25px;
+background:#d3d3d3;
+color:#0f172a;
+text-decoration:none;
+border-radius:6px;
+font-weight:600;
+transition:0.3s;
 }
 
 .btn:hover{
-    background:#0ea5e9;
-    transform:scale(1.05);
+background:#0ea5e9;
+transform:scale(1.05);
 }
 
-/* ===== SECTIONS ===== */
+/* ========================= */
+/* SECTIONS */
+/* ========================= */
+
 section{
-    padding:80px 10%;
+padding:80px 10%;
 }
 
 .section-title{
-    font-size:28px;
-    margin-bottom:40px;
-    text-align:center;
+font-size:30px;
+margin-bottom:40px;
+text-align:center;
 }
 
-/* ===== GRID ===== */
+/* ========================= */
+/* PROJECT GRID */
+/* ========================= */
+
 .projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
 }
 
 .card{
-    background:#3d3f41;
-    padding:25px;
-    border-radius:12px;
-    transition:0.3s;
-    text-align:center;
+background:#3d3f41;
+padding:30px;
+border-radius:12px;
+transition:0.3s;
+text-align:center;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+transform:translateY(-8px);
 }
 
 .card h3{
-    margin-bottom:10px;
+margin-bottom:10px;
 }
 
 .card p{
-    font-size:14px;
-    color:#ffffff;
-    
+font-size:14px;
+color:#ffffff;
 }
 
 .card i{
-    font-size:36px;
-    color:#778899;
-    margin-bottom:15px;
+font-size:36px;
+color:#778899;
+margin-bottom:15px;
 }
 
-/* ===== CONTACT BUTTONS ===== */
+/* ========================= */
+/* CONTACT */
+/* ========================= */
+
 .contact-btn{
-    display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    width:60px;
-    height:60px;
-    color:white;
-    font-size:24px;
-    border-radius:50%;
-    text-decoration:none;
-    transition:transform 0.3s, box-shadow 0.3s;
+display:inline-flex;
+justify-content:center;
+align-items:center;
+width:60px;
+height:60px;
+color:white;
+font-size:24px;
+border-radius:50%;
+text-decoration:none;
+transition:transform 0.3s, box-shadow 0.3s;
 }
 
 .contact-btn:hover{
-    transform:scale(1.2);
-    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+transform:scale(1.2);
+box-shadow:0 4px 15px rgba(0,0,0,0.4);
 }
 
-/* ===== FOOTER ===== */
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
 footer{
-    background:#393737; 
-    color:#f1f5f9; 
-    padding:40px 10%; 
-    text-align:center;
+background:#393737;
+color:#f1f5f9;
+padding:40px 10%;
+text-align:center;
 }
 
 footer a{
-    text-decoration:none;
-    transition:0.3s;
+text-decoration:none;
+transition:0.3s;
 }
 
 footer a:hover{
-    color:#38bdf8;
+color:#38bdf8;
 }
 
-/* ===== SMALL BUTTON ===== */
-.btn-small {
-    padding:6px 12px;
-    font-size:12px;
-    border-radius:5px;
-    background:#ffffff;
-    color:#0f172a;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
+.btn-small{
+padding:6px 12px;
+font-size:12px;
+border-radius:5px;
+background:#ffffff;
+color:#0f172a;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
-.btn-small:hover {
-    background:#0ea5e9;
-    transform:scale(1.05);
+.btn-small:hover{
+background:#0ea5e9;
+transform:scale(1.05);
 }
 
-/* ============================= */
-/* 📱 RESPONSIVE BREAKPOINTS */
-/* ============================= */
+/* ========================= */
+/* TABLET RESPONSIVE */
+/* ========================= */
 
-/* Tablets */
-@media (max-width: 992px){
-    section{
-        padding:60px 6%;
-    }
+@media (max-width:992px){
 
-    .hero h2{
-        font-size:36px;
-    }
+section{
+padding:70px 7%;
 }
 
-/* Mobile */
-@media (max-width: 768px){
-
-    header{
-        padding:15px 5%;
-        flex-direction:column;
-        gap:10px;
-    }
-
-    nav{
-        justify-content:center;
-    }
-
-    nav a{
-        margin:8px;
-    }
-
-    section{
-        padding:60px 5%;
-    }
-
-    .hero{
-        padding:60px 20px;
-    }
-
-    .hero h2{
-        font-size:30px;
-    }
-
-    .hero p{
-        font-size:14px;
-    }
-
-    .projects{
-        grid-template-columns:1fr;
-    }
+.hero h2{
+font-size:36px;
 }
 
-/* Small Phones */
-@media (max-width: 480px){
-
-    .hero img{
-        width:120px;
-        height:120px;
-    }
-
-    .hero h2{
-        font-size:26px;
-    }
-
-    .section-title{
-        font-size:22px;
-    }
-
-    .contact-btn{
-        width:50px;
-        height:50px;
-        font-size:20px;
-        
-    }
+.projects{
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 }
+
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width:768px){
+
+body{
+padding-top:140px;
+}
+
+.navbar{
+gap:18px;
+padding:12px 22px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.nav-link{
+font-size:14px;
+}
+
+.hero{
+padding:60px 20px;
+}
+
+.hero img{
+width:130px;
+height:130px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:14px;
+max-width:90%;
+}
+
+section{
+padding:60px 6%;
+}
+
+.section-title{
+font-size:24px;
+}
+
+.card{
+padding:25px;
+}
+
+.projects{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ========================= */
+/* SMALL PHONE */
+/* ========================= */
+
+@media (max-width:480px){
+
+.hero img{
+width:110px;
+height:110px;
+}
+
+.hero h2{
+font-size:24px;
+}
+
+.hero p{
+font-size:13px;
+}
+
+.contact-btn{
+width:50px;
+height:50px;
+font-size:20px;
+}
+
+.navbar{
+padding:10px 18px;
+gap:12px;
+}
+
+.nav-link{
+font-size:13px;
+}
+
+}
+
 </style>
 </head>
 
@@ -397,10 +427,7 @@ footer a:hover{
     <h2 class="section-title">My Previous Projects</h2>
     <div class="projects">
 
-        <div class="card">
-            <h3>Sports Court Booking System</h3>
-            <p>A full booking management system with real-time slot availability, admin dashboard, and database integration.</p>
-        </div>
+      
 
 
 
