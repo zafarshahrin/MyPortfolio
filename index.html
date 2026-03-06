@@ -362,6 +362,14 @@ font-size:13px;
 
 }
 
+.nav-link.active{
+    color:#38bdf8;
+}
+
+.nav-link.active::after{
+    width:100%;
+}
+
 </style>
 </head>
 
@@ -370,8 +378,8 @@ font-size:13px;
 <header class="main-header">
     <nav class="navbar">
         <a href="#hero" class="nav-link">Home</a>
-        <a href="#services" class="nav-link">Services</a>
         <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#contact" class="nav-link">Contact</a>
     </nav>
@@ -433,7 +441,8 @@ font-size:13px;
 
         <div class="card">
             <h3>Official Conference Website (SIRKM 2025)</h3>
-            <p>Official academic conference website developed for UiTM's Faculty of Computer and Mathematical Sciences. Features event information, structured content management, and responsive design.</p>
+            <p>Developed the official website for the Seminar Inovasi dan Reka Cipta Matematik (SIRKM 2025) organized by UiTM's Faculty of Computer and Mathematical Sciences. I was fully responsible for the website development, handling the complete coding and implementation independently. The website served as the official platform for the conference, providing structured information about the event, program details, and announcements.
+                 Built with a responsive design to ensure accessibility across desktop and mobile devices.</p>
             <br>
             <a class="btn-small" href="https://sirkm-2025.vercel.app/home" target="_blank">View Live Project</a>
         </div>
@@ -485,4 +494,33 @@ font-size:13px;
 </footer>
 
 </body>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
+
+window.addEventListener("scroll", () => {
+
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (pageYOffset >= sectionTop - 200) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+
+});
+</script>
+
 </html>
